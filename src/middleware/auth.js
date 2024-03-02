@@ -31,7 +31,9 @@ const comparePass = async (req, res, next) => {
     );
 
     if (!matched) {
-      return res.status(401).json({ message: "Invalid" });
+      return res
+        .status(401)
+        .json({ message: "Invalid password. Please trry again." });
     }
     const withoutPassword = {
       id: user.id,
